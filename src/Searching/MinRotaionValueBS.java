@@ -52,11 +52,11 @@ public class MinRotaionValueBS {
                start = mid;
            }
        }
-        return -1;
+        return arr[start];
    }
 
     public static void main(String[] args) {
-       int  arr[] = {2,3,1};
+       int  arr[] = {3,4,5,1,2};
         System.out.println(getMinValue(arr));
     }
 }
