@@ -1,0 +1,85 @@
+Matrix Problems
+1. Given a non null integer matrix Grid of dimensions NxM. Calculate the sum
+of its elements.
+Click link for sample input and output :
+https://practice.geeksforgeeks.org/problems/sum-of-elements-in-amatrix2000/1/
+2. Given a square matrix[ ][ ] of size N x N. The task is to rotate it by 90
+degrees in an anti-clockwise direction without using any extra space.
+Click link for sample input and output :
+https://practice.geeksforgeeks.org/problems/rotate-by-90-degree0356/1/
+3. Transpose of a matrix
+Click link for sample input and output :
+https://practice.geeksforgeeks.org/problems/transpose-of-matrix1587115621/1
+4. Given a binary matrix your task is to find all unique rows of the given
+matrix.
+Click link for sample input and output :
+https://practice.geeksforgeeks.org/problems/unique-rows-in-booleanmatrix/1
+5. Given a 2D array of n x m dimensions where each row is sorted. Find the
+0-based index of the first row that has the maximum number of 1's.and
+replace the rows with 0's
+Input:
+N = 4 , M = 4
+ Arr[ ][ ] = { {0, 1, 1, 1},
+ {0, 0, 1, 1},
+ {1, 1, 1, 1},
+ {0, 0, 0, 0} }
+output:
+{ { 0, 1, 1, 1}
+ { 0, 0, 1, 1}
+ { 0, 0, 0, 0}
+ { 0, 0, 0, 0} }
+6. Given an m x n integer matrix matrix, if an element is 0, set its entire row
+and column to 0's, and return the matrix.
+Click link for sample input and output :
+https://leetcode.com/problems/set-matrix-zeroes/description/
+7. Write a Program to Sort 2D Array Across Left Diagonal
+Sample Input: Matrix without sorting
+5 2 0 7 1
+3 4 2 9 14
+5 1 3 5 2
+4 2 6 2 1
+0 6 3 5 1
+Sample Output: Matrix after sorting
+1 2 0 7 1
+3 2 2 9 14
+5 1 3 5 2
+4 2 6 4 1
+0 6 3 5 5
+8. Given a matrix mat[][] of dimension N*M, a positive integer K and the
+source cell (X, Y), the task is to print all possible paths to move out of the
+matrix from the source cell (X, Y) by moving in all four directions in each
+move in at most K moves.
+Sample Input: N = 2, M = 2, X = 1, Y = 1, K = 2
+Sample Output:
+(1 1)(1 0)
+(1 1)(1 2)(1 3)
+(1 1)(1 2)(0 2)
+(1 1)(0 1)
+(1 1)(2 1)(2 0)
+(1 1)(2 1)(3 1)
+Sample Input: N = 1, M = 1, X = 1, Y = 1, K = 2
+Sample Output:
+(1 1)(1 0)
+(1 1)(1 2)
+(1 1)(0 1)
+(1 1)(2 1)
+9. Given a rows x cols binary matrix filled with 0's and 1's, find the largest
+rectangle containing only 1's and return its area.
+Click link for sample input and output :
+https://leetcode.com/problems/maximal-rectangle/description/
+10. Let's play a game!! Given a matrix mat[ ][ ] with n x m elements.
+Your task is to check if the matrix is Super Similar or not. To perform this
+task you have to follow these Rules: Firstly all even index rows to be
+Rotated left and odd index rows to right, And Rotation is done X
+times(Index starting from zero). Secondly, After all the Rotations check if
+the initial and the final Matrix are the same Return 1 else 0.
+Click link for sample input and output :
+https://practice.geeksforgeeks.org/problems/lets-play0201/1
+11. Given a 2D grid of n*m of characters and a word, find all
+occurrences of a given word in a grid. A word can be matched in all 8
+directions at any point. Word is said to beClick link for sample input and
+output : found in a direction if all characters match in this direction (not in
+zig-zag form). The 8 directions are, horizontally left, horizontally right,
+vertically up, vertically down and 4 diagonal directions.
+Click link for sample input and output :
+ https://practice.geeksforgeeks.org/problems/find-the-string-in-grid0111/1

@@ -40,6 +40,10 @@ public class GoodPair {
             if(value>=2){
                 count+=value+(value+1/2);
             }
+            if(value == 1){
+                count+=1;
+            }
+
         }
         System.out.println(count);
     }
