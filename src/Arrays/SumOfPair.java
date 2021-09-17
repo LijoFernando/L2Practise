@@ -49,7 +49,8 @@ public class SumOfPair {
     }
 
     public static void main(String[] args) {
-        int arr[] = {10, 12, 10, 15, -1, 7, 6, 5, 4, 2, 1, 1, 1};
-        getPairCount(arr, arr.length, 11);
+        // {10, 12, 10, 15, -1, 7, 6, 5, 4, 2, 1, 1, 1}
+        int arr[] ={1,5,7,-1,5};
+        getPairCount(arr, arr.length, 6);
     }
 }
