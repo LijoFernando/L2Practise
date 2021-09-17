@@ -1,6 +1,5 @@
 package Array2D;
 
-import com.sun.deploy.ref.AppModel;
 
 public class ZeroBasedIndex {
     /*.Given a 2D array of n x m dimensions where each row is sorted. Find the
