@@ -69,14 +69,9 @@ Constraints:
         if(root == null) {
             return;
         }
-
         //  System.out.print(root.left);
-
         getSorted(root.left, list);
         list.add(root.root);
         getSorted(root.right, list);
-
-
-
     }
 }

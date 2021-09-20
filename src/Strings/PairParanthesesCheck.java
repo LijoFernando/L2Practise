@@ -46,33 +46,24 @@ Constraints:
 1 <= s.length <= 104
 s consists of parentheses only '()[]{}'..*/
     public static boolean isValid(String expression, int length ){
-        char letter = 0;
-        int asci=0;
-
+        char letter;
+        int asci;
        for (int i = 0; i <length-1; i++) {
-           if (length/2==1){
-               return false;
-           }
+           if (length/2==1)   return false;
            letter = expression.charAt(i);
            int nxtLetter = expression.charAt(i+1);
-            asci =letter;
-            if(letter!='('){
-                asci++;
-            }
-           if(nxtLetter == (asci+1)){
-                System.out.println(nxtLetter+" "+(asci+1));
-           }
-           else{
-               return false;
-           }
+            asci = letter;
+            if(letter!='(')  asci++;
+           if(nxtLetter != (asci+1)) return false;
+              //  System.out.println(nxtLetter+" "+(asci+1));
            i++;
       }
        return true;
     }
 
     public static void main(String[] args) {
-        String expression = "{}(){}[]";
+        String expression = "{}{}[]";
         int length = expression.length();
-        System.out.println(isValid(expression,length)) ;
+        System.out.println("Parantheses Expression is: "+isValid(expression,length)) ;
     }
 }
