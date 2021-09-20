@@ -36,18 +36,17 @@ Constraints:
     int min =Integer.MAX_VALUE;
     int prev =Integer.MAX_VALUE;
     int minValue(Node node) {
-        getmin(node);
+        getSorted(node);
         return min;
     }
-    public void getmin(Node node){
-        if(node == null){
+    public void getSorted(Node root){
+        if(root == null) {
             return;
         }
-        getmin(node.left);
-        if(prev!=Integer.MAX_VALUE && min<node.val-prev){
-            min=node.val-prev;
-        }
-        prev= node.val;
-        getmin(node.right);
+        //  System.out.print(root.left);
+        getSorted(root.left);
+        int sum=root.data;
+        if(sum<min) min = sum;
+        getSorted(root.right);
     }
 }
