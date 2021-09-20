@@ -33,6 +33,14 @@ Expected Auxiliary Space: O(Height of the BST).
 
 Constraints:
 1 <= N <= 104.*/
+    class Node{
+        int data;
+        Node left,right;
+        Node(int key){
+            data = key;
+            left = right = null;
+        }
+    }
     int min =Integer.MAX_VALUE;
     int prev =Integer.MAX_VALUE;
     int minValue(Node node) {
