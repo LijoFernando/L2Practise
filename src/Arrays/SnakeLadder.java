@@ -24,53 +24,45 @@ output will be 3.
 a) For 1st throw get a 2.
 b) For 2nd throw get a 6.
 c) For 3rd throw get a 2..*/
-    public static void getThrowCount(int[] ladders) {
-        //Map<Integer, Integer> ladderMap = new HashMap<>();
-        int count = 0;
-        int begin = 0;
-        int stand = begin + 1;
-        int end = ladders.length - 1;
-        int i = 0;
-        i = stand+1;
-        while (begin < end) {
-            int mouth = ladders[i];
-            int tail = ladders[i + 1];
-            if (mouth>ladders[stand]) {
-                if (tail>mouth) {
-                    stand=i+1;
+
+    static int count(int start) {
+        int count = 1;
+        if (start > 6) count += (int) Math.ceil(start / 6);
+        return count;
+    }
+
+    static int travel(int[] arr, int j) {
+        int end = 30;
+        int count = count(arr[j]);
+        int stand = Integer.MIN_VALUE;
+        for (int i = j; i < arr.length - 1; i++) {
+
+            if (stand < arr[i]) {
+                if (arr[i + 1] > arr[i]) {
                     count++;
+                    stand = arr[i + 1];
+                    // System.out.print(stand+" travel() ");
                 }
             }
-            i = i + 2;
-            if (tail<mouth) {
-                i = 0;
-               count = (ladders.length - 1) - stand + count;
-                System.out.println(count);
-                count = 0;
-                begin=begin + 2;
-                stand=stand+1;
-            }
+            i++;
         }
-//        for (int i = 0; i < ladders.length-1 ; i++) {
-//            ladderMap.put(ladders[i], ladders[i+1]);
-//            i++;
-//        }
-//        System.out.println(ladderMap.entrySet());
-//        for (int k:ladderMap.keySet()){
-//
-//        }
-
+        count += (int) Math.ceil((end - stand) / 6);
+        return count;
     }
 
     public static void main(String[] args) {
-        int[] ladder = {3, 22,
-                5, 8,
-                11, 26,
-                20, 29,
-                17, 4,
-                19, 7,
-                27, 1,
-                21, 9};
-        getThrowCount(ladder);
+        int[] arr = {3, 22, 5, 8, 11, 26, 20, 29, 17, 4, 19, 7, 27, 1, 21, 9};
+        int least = Integer.MAX_VALUE;
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i + 1] < arr[i]) break;
+            int temp = travel(arr, i);
+            //  System.out.print(temp+" temp");
+            //System.out.println();
+            if (temp < least) least = temp;
+            i++;
+        }
+        System.out.println(least);
     }
+
 }
