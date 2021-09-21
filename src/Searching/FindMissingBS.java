@@ -1,6 +1,6 @@
 package Searching;
 
-public class FindMissingBST {
+public class FindMissingBS {
 //    Index Of an Extra Element
 //    Easy Accuracy: 50.04% Submissions: 55498 Points: 2
 //    Given two sorted arrays of distinct elements. There is only 1 difference between the arrays. First array has one element extra added in between. Find the index of the extra element.

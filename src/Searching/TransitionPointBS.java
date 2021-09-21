@@ -1,6 +1,6 @@
 package Searching;
 
-public class TransitionPointBST {
+public class TransitionPointBS {
 
 //    Find Transition Point
 //    Easy Accuracy: 53.15% Submissions: 100k+ Points: 2

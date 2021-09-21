@@ -1,6 +1,6 @@
 package Searching;
 
-public class BitonicBST {
+public class BitonicBS {
 //    Bitonic Point
 //    Easy Accuracy: 52.84% Submissions: 29969 Points: 2
 //    Given an array arr of n elements which is first increasing and then may be decreasing, find the maximum element in the array.

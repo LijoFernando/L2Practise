@@ -1,6 +1,6 @@
 package Searching;
 
-public class ElementPresentBST {
+public class ElementPresentBS {
 //    Searching an element in a sorted array
 //    Basic Accuracy: 51.08% Submissions: 42074 Points: 1
 //    Given an array arr[] sorted in ascending order of size N and an integer K. Check if K is present in the array or not.
@@ -56,8 +56,8 @@ public class ElementPresentBST {
     }
 
     public static void main(String[] args) {
-        int arr[] = {1,2,3,4,15,21,32,61};
-        System.out.println(isPresent(arr, 61));
+        int arr[] = {5,2};
+        System.out.println(isPresent(arr, 2));
     }
 
 }

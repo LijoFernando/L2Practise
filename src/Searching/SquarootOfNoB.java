@@ -1,6 +1,6 @@
 package Searching;
 
-public class SquarootOfNoBT {
+public class SquarootOfNoB {
 
 //    Square root of a number
 //    Medium Accuracy: 52.21% Submissions: 79457 Points: 4
