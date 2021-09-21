@@ -90,7 +90,7 @@ s consists of parentheses only '()[]{}'..*/
                 if(i==0) return false;
                 char prev = exp.charAt(i-1);
                 if ((prev=='{' && l=='}')||(prev=='(' && l==')')||(prev=='[' && l==']'))  {
-                    list.pop();s
+                    list.pop();
                     continue;
                 }
             } else list.push(l);
