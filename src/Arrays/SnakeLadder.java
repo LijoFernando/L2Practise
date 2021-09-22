@@ -36,7 +36,6 @@ c) For 3rd throw get a 2..*/
         int count = count(arr[j]);
         int stand = Integer.MIN_VALUE;
         for (int i = j; i < arr.length - 1; i++) {
-
             if (stand < arr[i]) {
                 if (arr[i + 1] > arr[i]) {
                     count++;
@@ -51,14 +50,13 @@ c) For 3rd throw get a 2..*/
     }
 
     public static void main(String[] args) {
-        int[] arr = {3, 22, 5, 8, 11, 26, 20, 29, 17, 4, 19, 7, 27, 1, 21, 9};
+        int[] arr = {22, 9};
         int least = Integer.MAX_VALUE;
-
         for (int i = 0; i < arr.length - 1; i++) {
-            if (arr[i + 1] < arr[i]) break;
+          //  if (arr[i + 1] < arr[i]) break;
             int temp = travel(arr, i);
-            //  System.out.print(temp+" temp");
-            //System.out.println();
+            System.out.print(temp+" temp");
+            System.out.println();
             if (temp < least) least = temp;
             i++;
         }
