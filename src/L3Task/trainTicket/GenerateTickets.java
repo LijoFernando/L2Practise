@@ -94,8 +94,10 @@ public class GenerateTickets {
     public String getStatus(char breth) {
         String status ="";
         if (breth == 'W') {
+            System.out.println('W');
             status= "waiting";
         } else if (breth == 'R') {
+            System.out.println('R');
             status= "rac";
         }
         else {

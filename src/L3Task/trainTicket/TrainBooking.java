@@ -51,7 +51,7 @@ public class TrainBooking {
                 case 6:
                     System.out.println("Booked Ticket List");
                     bkedList.getBookedTicketsByCategory();
-
+                    break;
                 case 0:
                     System.exit(0);
                     break;

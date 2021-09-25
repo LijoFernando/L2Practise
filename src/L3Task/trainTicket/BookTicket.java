@@ -12,7 +12,6 @@ public class BookTicket {
     GenerateTickets avTkt = new GenerateTickets();
     GenerateTickets generateTickets = new GenerateTickets();
     BookedTicketList bookedTicketList = new BookedTicketList();
-
     public void inputDetails() throws Exception {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -33,6 +32,7 @@ public class BookTicket {
         passInfo.setAge(age);
         char alotedBreth =avTkt.allotBreth(prefbreth);
         String status = avTkt.getStatus(alotedBreth);
+       // System.out.println(status);
         int bookID = passInfo.getBookID();
         passInfo.setPrebreth(alotedBreth);
         passInfo.setAllotedBreth(avTkt.allotSeat(alotedBreth));

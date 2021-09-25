@@ -5,20 +5,21 @@ import java.util.Arrays;
 import java.util.List;
 
 public class BookedTicketList {
-    static List<Integer> confirmedTicketList = new ArrayList<>();
-    static List<Integer> racTicketsList = new ArrayList<>();
-    static List<Integer> waitingList = new ArrayList<>();
+     List<Integer> confirmedTicketList = new ArrayList<>();
+     List<Integer> racTicketsList = new ArrayList<>();
+     List<Integer> waitingList = new ArrayList<>();
 
-    public static void splitTickets(String ticketStatus, Integer bookId) {
+    public void splitTickets(String ticketStatus, Integer bookId) {
         if (ticketStatus == "confirm") {
             confirmedTicketList.add(bookId);
         } else if (ticketStatus == "waiting") {
             waitingList.add(bookId);
-        } else if (ticketStatus == "rac") {
+        } else if (ticketStatus.equals( "rac")) {
             racTicketsList.add(bookId);
+            System.out.println("RAC Tickets: "+Arrays.deepToString(confirmedTicketList.toArray()));
         }
     }
-    public static void getBookedTicketsByCategory(){
+    public void getBookedTicketsByCategory(){
         System.out.println("Confirmed Tickets: "+Arrays.deepToString(confirmedTicketList.toArray()));
         System.out.println("RAC Tickets: "+Arrays.deepToString(confirmedTicketList.toArray()));
         System.out.println("WaitingList Tickets: "+Arrays.deepToString(confirmedTicketList.toArray()));
