@@ -11,6 +11,7 @@ public class BookTicket {
     PassengerInfo passInfo = new PassengerInfo();
     GenerateTickets avTkt = new GenerateTickets();
     GenerateTickets generateTickets = new GenerateTickets();
+    BookedTicketList bookedTicketList = new BookedTicketList();
 
     public void inputDetails() throws Exception {
 
@@ -21,23 +22,25 @@ public class BookTicket {
         char prefBreth = (char) br.read();
         String status = "No TicketsAvailable";
         if (avTkt.isAvailable()) {
-            bookticket(name, age, prefBreth);
+           status = bookticket(name, age, prefBreth);
         }
-        //System.out.println(status);
+        System.out.println(status);
     }
 
-    public void bookticket(String name, int age, char prefbreth) {
+    public String bookticket(String name, int age, char prefbreth) {
         passInfo.setBookID(generateTickets.getBookID());
         passInfo.setName(name);
         passInfo.setAge(age);
-        passInfo.setPrebreth(avTkt.allotBreth(prefbreth));
-        char alotedBreath = passInfo.getPrebreth();
-        passInfo.setAllotedBreth(avTkt.allotSeat(alotedBreath));
-        passInfo.setStatus(avTkt.getStatus(alotedBreath));
+        char alotedBreth =avTkt.allotBreth(prefbreth);
+        String status = avTkt.getStatus(alotedBreth);
         int bookID = passInfo.getBookID();
+        passInfo.setPrebreth(alotedBreth);
+        passInfo.setAllotedBreth(avTkt.allotSeat(alotedBreth));
+        passInfo.setStatus(status);
+        bookedTicketList.splitTickets(status,bookID);
         passengerMap.put(bookID, passInfo);
-        System.out.println("Map "+passengerMap);
-       // return passengerMap.get(bookID).toString();
+       // System.out.println("Map "+passengerMap);
+        return passengerMap.get(bookID).toString();
     }
 
     public Map<Integer, PassengerInfo> getPassengerList() {

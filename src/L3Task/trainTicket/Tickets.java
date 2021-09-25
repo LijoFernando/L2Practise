@@ -9,10 +9,10 @@ public class Tickets {
     static Map<String, Integer> map = new HashMap<>();
 
     public static void loadTickets() {
-        map.put("upBreth", 21);
-        map.put("midBreth", 21);
-        map.put("lwBreth", 21);
-        map.put("rAC", 16);
+        map.put("upBreth", 0);
+        map.put("midBreth", 0);
+        map.put("lwBreth", 0);
+        map.put("rAC", 1);
         map.put("wList", 10);
         map.put("ticketNo", 0);
     }

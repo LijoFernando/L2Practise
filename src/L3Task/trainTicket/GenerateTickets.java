@@ -86,21 +86,26 @@ public class GenerateTickets {
     }
 
     public String allotSeat(char breth) {
+        if(breth=='R') return "SideLower"+ticketNo;
         String seatNo = breth + "" + ticketNo;
         return seatNo;
     }
 
     public String getStatus(char breth) {
+        String status ="";
         if (breth == 'W') {
-            return "waiting";
-        } else if (breth == 'W') {
-            return "rac";
+            status= "waiting";
+        } else if (breth == 'R') {
+            status= "rac";
         }
-        return "confirm";
+        else {
+            status= "confirm";
+        }
+        return  status;
     }
 
     @Override
     public String toString() {
-        return "Available: " + (upBreth + midBreth + lwBreth) + ", RAC: " + rAC;
+        return "Available: " + (upBreth + midBreth + lwBreth) + ", RAC: " + rAC+ " Waiting List :"+wList;
     }
 }

@@ -11,11 +11,13 @@ public class TrainBooking {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BookTicket bk = new BookTicket();
+        BookedTicketList bkedList = new BookedTicketList();
 
         Boolean exit = true;
 
         while (exit) {
-            System.out.println("Select -> 1:BookTicket | 2: Show Tickets | 3. Cancel Ticket | 4.Show Booked Tickets |5.Ticket Enquiry |0.exit");
+            System.out.println("Select -> 1:BookTicket | 2: Show Tickets | 3. Cancel Ticket | 4.Show Booked Tickets +" +
+                    "| 5.Ticket Enquiry| 6.Print Booked List |0.exit");
             int choice = Integer.parseInt(br.readLine());
             switch (choice) {
                 case 1:
@@ -39,13 +41,16 @@ public class TrainBooking {
                     System.out.println("Record List Reached");
                     break;
                 case 5:
-//                    System.out.println(Ënter);
+                    //System.out.println(Ënter);
                     Scanner input = new Scanner(System.in);
                     System.out.println("Enter BookID");
                     int a = input.nextInt();
                     Map<Integer, PassengerInfo> map = bk.getPassengerList();
                     System.out.println(map.get(a));
                     break;
+                case 6:
+                    System.out.println("Booked Ticket List");
+                    bkedList.getBookedTicketsByCategory();
 
                 case 0:
                     System.exit(0);

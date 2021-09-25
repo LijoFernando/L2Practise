@@ -1,6 +1,7 @@
 package L3Task.trainTicket;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class BookedTicketList {
@@ -16,5 +17,10 @@ public class BookedTicketList {
         } else if (ticketStatus == "rac") {
             racTicketsList.add(bookId);
         }
+    }
+    public static void getBookedTicketsByCategory(){
+        System.out.println("Confirmed Tickets: "+Arrays.deepToString(confirmedTicketList.toArray()));
+        System.out.println("RAC Tickets: "+Arrays.deepToString(confirmedTicketList.toArray()));
+        System.out.println("WaitingList Tickets: "+Arrays.deepToString(confirmedTicketList.toArray()));
     }
 }
