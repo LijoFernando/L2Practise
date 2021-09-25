@@ -26,7 +26,7 @@ public class TrainBooking {
                     System.out.println(gntkt.toString());
                     break;
                 case 3:
-                    System.out.println("Enter BookID");
+                    System.out.println("Enter Your BookID");
                     int bookID = Integer.parseInt(br.readLine());
                     CancelTicket cancelTkt = new CancelTicket();
                     System.out.println(cancelTkt.cancelTicketbyBookID(bookID));
@@ -41,6 +41,7 @@ public class TrainBooking {
                 case 5:
 //                    System.out.println(Ënter);
                     Scanner input = new Scanner(System.in);
+                    System.out.println("Enter BookID");
                     int a = input.nextInt();
                     Map<Integer, PassengerInfo> map = bk.getPassengerList();
                     System.out.println(map.get(a));

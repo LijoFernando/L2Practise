@@ -3,8 +3,8 @@ package L3Task.trainTicket;
 import java.util.Map;
 
 public class CancelTicket {
-    static Tickets tkt = new Tickets();
-    static BookTicket bkTicket = new BookTicket();
+    Tickets tkt = new Tickets();
+    BookTicket bkTicket = new BookTicket();
     Map<Integer, PassengerInfo> passengerList = bkTicket.getPassengerList();
 
     public String cancelTicketbyBookID(int bookID) {
@@ -17,7 +17,8 @@ public class CancelTicket {
             char breth = passengerInfo.getPrebreth();
             tkt.reAllocateTicket(breth);
             passengerInfo.setStatus("Cancelled");
-            return "Ticket Cancelled";
+            System.out.println(passengerInfo);
+            return "Ticket Cancelled Successfully";
         }
         return cancelStatus;
     }

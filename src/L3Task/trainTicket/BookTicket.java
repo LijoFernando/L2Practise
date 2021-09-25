@@ -41,10 +41,10 @@ public class BookTicket {
     }
 
     public Map<Integer, PassengerInfo> getPassengerList() {
-       // if (!passengerMap.isEmpty()) {
-            System.out.println("Map Filled:"+passengerMap);
-      //  }
-        return passengerMap;
+        if (!passengerMap.isEmpty()) {
+            return passengerMap;
+        }
+        return null;
     }
 }
 

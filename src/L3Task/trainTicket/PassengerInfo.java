@@ -35,22 +35,32 @@ public class PassengerInfo {
         return age;
     }
 
-    public char getPrebreth() { return prebreth;    }
+    public char getPrebreth() {
+        return prebreth;
+    }
 
-    public void setPrebreth(char prebreth) {  this.prebreth = prebreth;  }
+    public void setPrebreth(char prebreth) {
+        this.prebreth = prebreth;
+    }
 
     public String getAllotedBreth() {
         return allotedBreth;
     }
 
-    public void setAllotedBreth(String allotedBreth) { this.allotedBreth = allotedBreth; }
+    public void setAllotedBreth(String allotedBreth) {
+        this.allotedBreth = allotedBreth;
+    }
 
-    public Integer getBookID() { return bookID; }
+    public Integer getBookID() {
+        return bookID;
+    }
 
-    public void setBookID(Integer bookID) { this.bookID = bookID;}
+    public void setBookID(Integer bookID) {
+        this.bookID = bookID;
+    }
 
     @Override
-    public String toString(){
-        return "BookID: "+getBookID()+" Name: "+getName()+" Age: "+getAge()+" Breth: "+getAllotedBreth()+" Status: "+getStatus();
+    public String toString() {
+        return "BookID: " + getBookID() + " Name: " + getName() + " Age: " + getAge() + " Breth: " + getAllotedBreth() + " Status: " + getStatus();
     }
 }
