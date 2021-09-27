@@ -3,7 +3,7 @@ package Arrays;
 import java.util.*;
 
 public class Alternatingsort {
-//    Alternative Sorting
+    //    Alternative Sorting
 //    Basic Accuracy: 69.97% Submissions: 2479 Points: 1
 //    Given an array arr[] of N distinct integers, output the array in such a way that the first element is first maximum and the second element is the first minimum, and so on.
 //
@@ -34,24 +34,24 @@ public class Alternatingsort {
 //
 //    Constraints:
 //            1 ≤ N ≤ 106
-public static ArrayList<Long> alternateSort(long arr[] ,int N)
-{
-    Arrays.sort(arr);
-   // {1, 2, 3, 4, 6,7,8, 9}
-   // 9 8 7 6 5 4 3 2 1
-    ArrayList<Long> sortedList = new ArrayList<>(arr.length);
-    int l = 0;
-    int r = N-1;
-    while(l<r){
-        sortedList.add(arr[r]);
-        sortedList.add(arr[l]);
-        l++;
-        r--;
+    public static ArrayList<Long> alternateSort(long arr[], int N) {
+        Arrays.sort(arr);
+        // {1, 2, 3, 4, 6,7,8, 9}
+        // 9 8 7 6 5 4 3 2 1
+        ArrayList<Long> sortedList = new ArrayList<>(arr.length);
+        int l = 0;
+        int r = N - 1;
+        while (l < r) {
+            sortedList.add(arr[r]);
+            sortedList.add(arr[l]);
+            l++;
+            r--;
+        }
+        return sortedList;
     }
-return  sortedList;
-}
+
     public static void main(String[] args) {
-        long [] arr ={2, 5, 9, -1, 7, 6, 3};
+        long[] arr = {2, 5, 9, -1, 7, 6, 3};
         System.out.println(Arrays.toString(alternateSort(arr, arr.length).toArray()));
     }
 

@@ -27,7 +27,7 @@ public class LRUCache {
 
     public int get(int key) {
         if(mapList.containsKey(key)) {
-            Node n= mapList.get(key);
+            Node n = mapList.get(key);
              remove(n);
              addNode(n);
              return n.value;
