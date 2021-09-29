@@ -83,7 +83,7 @@ public class InputLayer {
                     System.out.println(onReserve.cancelTicket(pnr));
                     break;
                 }
-                case 5:{
+                case 5: {
                     System.out.println("Enter yout PNR Number:");
                     int pnr = input.nextInt();
                     OnlineReservationSystem onReserve = new OnlineReservationSystem();

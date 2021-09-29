@@ -34,8 +34,6 @@ public class TicketForm {
     private String status;
 
 
-
-
     public int getPnr() {
         return pnr;
     }
@@ -103,22 +101,21 @@ public class TicketForm {
 
     private String destination;
 
-@Override
-public String toString() {
-    return "TicketForm{" +
-            "name='" + name + '\'' +
-            ", age=" + age +
-            ", pnr=" + pnr +
-            ", trainNo=" + trainNo +
-            ", trainName='" + trainName + '\'' +
-            ", classType='" + classType + '\'' +
-            ", dateJourney='" + dateJourney + '\'' +
-            ", origin='" + origin + '\'' +
-            ", destination='" + destination + '\'' +
-            ", status='" + status + '\'' +
-            '}';
-}
-
+    @Override
+    public String toString() {
+        return "TicketForm{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", pnr=" + pnr +
+                ", trainNo=" + trainNo +
+                ", trainName='" + trainName + '\'' +
+                ", classType='" + classType + '\'' +
+                ", dateJourney='" + dateJourney + '\'' +
+                ", origin='" + origin + '\'' +
+                ", destination='" + destination + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
 
 
 }

@@ -32,26 +32,26 @@ public class LiftScheduler {
     }
 
     public static String scheduleLift(int current, int origin) {
-        String asingnedLift = checkNearest(current,origin);
+        String asingnedLift = checkNearest(current, origin);
         setLiftPosition(asingnedLift, origin);
         return asingnedLift;
     }
 
     public static String checkNearest(int current, int origin) {
         int index = 0;
-        int diff=Integer.MAX_VALUE;
-        for (int i = 0; i <liftpostition.size(); i++) {
-            int postion =liftpostition.get(i);
-            int temp= Math.abs(postion-current);
+        int diff = Integer.MAX_VALUE;
+        for (int i = 0; i < liftpostition.size(); i++) {
+            int postion = liftpostition.get(i);
+            int temp = Math.abs(postion - current);
             //when diff equal and current place > destination and downward position
             /*.Example: if the user requests to move from 4 to 2 ,and if L3 is on the 5th floor & L5 is on the 3rd floor,
            then we should assign L3 because the user requested for downward motion so L3 i'll move down from 5th floor.*/
-            if(diff == temp && current>origin && postion>current){
+            if (diff == temp && current > origin && postion > current) {
                 return liftsList.get(i);
             }
-            if(diff > temp){
+            if (diff > temp) {
                 diff = temp;
-                index=i;
+                index = i;
             }
         }
         return liftsList.get(index);

@@ -31,7 +31,7 @@ public class OnlineReservationSystem {
         if (signInList.containsKey(userId)) {
             User user = signInList.get(userId);
             if (password.equals(user.getPassword())) {
-                status = "Hai " + user.getUsername() + ",\n Login Successfully";
+                status = "Hai " + user.getUsername() + ", Login Successfully";
             }
         }
         return status;
@@ -44,16 +44,16 @@ public class OnlineReservationSystem {
             int pnr = (int) (Math.random() * 100000);
             int trainNumber = ticketForm.getTrainNo();
             String selectClass = ticketForm.getClassType();
-            String classType = trainSearch(trainNumber,selectClass);
+            String classType = trainSearch(trainNumber, selectClass);
             System.out.println(classType);
-            if(classType==null){
+            if (classType == null) {
                 return "ClassType Not Found";
             }
             ticketForm.setStatus("confirm");
             ticketForm.setPnr(pnr);
             allocatedTicketList.put(pnr, ticketForm);
             System.out.println(ticketForm.toString());
-            message = "your PNR is: "+pnr+" Form Submitted Successfully%%";
+            message = "your PNR is: " + pnr + " Form Submitted Successfully%%";
         }
         return message;
     }
@@ -62,23 +62,25 @@ public class OnlineReservationSystem {
         if (trainList.containsKey(trainNo)) {
             String[] classList = trainList.get(trainNo);
             for (String s : classList) {
-                if(classType==s)return s;
+                if (classType == s) return s;
                 else return "Sitting";
             }
         }
         return null;
     }
-    public static String cancelTicket(int pnr){
-        String message ="Ticket Cancellation UnSuccessful";
-        if(allocatedTicketList.containsKey(pnr)) {
-            message ="Ticket Cancelled Successfully";
+
+    public static String cancelTicket(int pnr) {
+        String message = "Ticket Cancellation UnSuccessful";
+        if (allocatedTicketList.containsKey(pnr)) {
+            message = "Ticket Cancelled Successfully";
             TicketForm ticket = allocatedTicketList.get(pnr);
             ticket.setStatus("Cancelled");
             allocatedTicketList.put(pnr, ticket);
         }
-        return  message;
+        return message;
     }
-    public static  void getPNREnquiry(int pnr) {
+
+    public static void getPNREnquiry(int pnr) {
         System.out.println(allocatedTicketList.get(pnr).toString());
     }
 }
