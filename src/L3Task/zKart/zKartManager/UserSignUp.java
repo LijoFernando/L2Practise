@@ -1,6 +1,6 @@
 package L3Task.zKart.zKartManager;
 
-import Pojo.User;
+import L3Task.zKart.Pojo.User;
 
 import java.io.*;
 import java.util.Arrays;

@@ -1,7 +1,7 @@
 package L3Task.zKart.zKartManager;
 
-import Pojo.Product;
-import Pojo.Transaction;
+import L3Task.zKart.Pojo.Product;
+import L3Task.zKart.Pojo.Transaction;
 
 import java.util.ArrayList;
 import java.util.HashMap;

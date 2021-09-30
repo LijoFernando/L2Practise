@@ -1,8 +1,8 @@
 package L3Task.L3Final;
 
-import zKartManager.DbDriver;
-import zKartManager.Login;
-import zKartManager.UserSignUp;
+import L3Task.L3Final.zKartManager.DbDriver;
+import L3Task.L3Final.zKartManager.Login;
+import L3Task.L3Final.zKartManager.UserSignUp;
 
 import java.util.Scanner;
 

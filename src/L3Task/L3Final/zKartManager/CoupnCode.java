@@ -1,6 +1,6 @@
 package L3Task.L3Final.zKartManager;
 
-import Pojo.Transaction;
+import L3Task.L3Final.Pojo.Transaction;
 
 import java.util.Map;
 
