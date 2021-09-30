@@ -2,6 +2,8 @@ package PropertyFileDemo;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 public class ReadPropertyFile {
@@ -27,11 +29,15 @@ public class ReadPropertyFile {
         System.out.println(prpty2.toString());
 
         //print changed value
-        getChangedValue(prpty1, prpty2, "username");
-
+        for(String i: prpty1.stringPropertyNames()) {
+            getChangedValue(prpty1, prpty2, i);
+        }
         //print properties
         System.out.println(prpty1.toString());
         System.out.println(prpty2.toString());
+
+        //load property to HashMap
+        loadHasMap(prpty1);
     }
 
     //validFileMethod
@@ -57,5 +63,19 @@ public class ReadPropertyFile {
         } else {
             System.out.println(value2);
         }
+    }
+
+    public static void loadHasMap(Properties property) {
+        Map<String, String> propertyData = new HashMap<>();
+        for (String key : property.stringPropertyNames()) {
+            String value = property.getProperty(key);
+            property.put(key, value);
+        }
+
+//        for (Map.Entry<Object,Object> entry:property.entrySet()){
+//            propertyData.put((String) entry.getKey(),(String) entry.getValue());
+//        }
+
+        System.out.println(propertyData.entrySet());
     }
 }
