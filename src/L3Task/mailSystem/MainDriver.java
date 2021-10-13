@@ -1,5 +1,7 @@
 package L3Task.mailSystem;
 
+import L3Task.mailSystem.mailException.MailException;
+
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +11,7 @@ import java.util.Scanner;
 public class MainDriver {
     static Scanner input = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MailException {
 
         while (true) {
             System.out.println("___________________________Email System___________________________________");
@@ -18,7 +20,9 @@ public class MainDriver {
                     " \n0.Exit");
             int choice = input.nextInt();
             switch (choice) {
+
                 case 1:
+
                     System.out.println("Enter UserName: ");
                     input.nextLine();
                     String userName = input.nextLine();
@@ -38,7 +42,9 @@ public class MainDriver {
                         System.out.println("Username or email Already Used");
                     }
                     break;
+
                 case 2:
+
                     System.out.println("_______________________Group Creation___________________");
                     System.out.println("Group Name");
                     input.nextLine();
@@ -63,7 +69,9 @@ public class MainDriver {
                         GroupManager.getGroupList();
                     }
                     break;
+
                 case 3:
+
                     System.out.println("___________________Group Assignment____________________");
                     System.out.println("Group Name: ");
                     input.nextLine();
@@ -78,7 +86,9 @@ public class MainDriver {
                     manipulateInput[2] = manipulate;
                     System.out.println(GroupManager.addOrRemoveUser(manipulateInput));
                     break;
+
                 case 4:
+
                     System.out.println("________________Compose_Mail_________________________________");
                     System.out.println("Enter username");
                     input.nextLine();
@@ -89,30 +99,36 @@ public class MainDriver {
                     String subject = input.nextLine();
                     System.out.println("Mail Content");
                     String content = input.nextLine();
+
                     List<String> mailData = new ArrayList<>();
                     mailData.add(mailerName);
                     mailData.add(to);
                     mailData.add(subject);
                     mailData.add(content);
-                    if(MailManager.composeMail(mailData)){
+                    if (MailManager.composeMail(mailData, "Sent")) {
                         System.out.println("Mail sent");
                     }
                     break;
+
                 case 5:
+
                     System.out.println("___________________MY_INBOX___________________________________");
                     System.out.println("Enter UserName");
+                    input.nextLine();
                     String mailUserName = input.nextLine();
 
-                    Map<Integer, Mail> userMails = MailManager.getMails(mailUserName);
-                    if(userMails!=null) {
+                    Map<String, List<Mail>> userMails = MailManager.getUserMails(mailUserName);
+
+                    if (userMails != null) {
                         for (Map.Entry mail : userMails.entrySet()) {
                             System.out.println(mail.getKey() + "        " + mail.getValue().toString());
                         }
-                    }
-                    else{
+                    } else {
                         System.out.println("Empty userMails");
                     }
+
                     break;
+
                 case 0:
                     System.out.println("System Exited");
                     System.exit(0);

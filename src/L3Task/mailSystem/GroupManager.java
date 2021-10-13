@@ -19,7 +19,7 @@ public class GroupManager {
 
                 String groupPassword = groupDetails.get(2);
                 String groupDescription = groupDetails.get(3);
-                String groupMembers = groupDetails.get(4);
+                String[] groupMembers = groupDetails.get(4).split(",");
 
                 Group group = new Group();
                 group.setUsername(groupName);
@@ -27,7 +27,9 @@ public class GroupManager {
                 group.setPassword(groupPassword);
                 group.setDescription(groupDescription);
                 group.setGroupMembers(new ArrayList<>());
-                group.getGroupMembers().add(groupMembers);
+                for (String member : groupMembers) {
+                    group.getGroupMembers().add(member);
+                }
                 userGroups.put(groupName, group);
 
             } else return false;
@@ -41,9 +43,8 @@ public class GroupManager {
     }
 
     public static void getGroupList() {
-        for (Map.Entry group : userGroups.entrySet()) {
-            System.out.println(group.getValue().toString());
-        }
+        System.out.println("Group Name List");
+        System.out.println(userGroups.keySet());
     }
 
     public static String addOrRemoveUser(String[] groupManipulateData) {
@@ -59,10 +60,8 @@ public class GroupManager {
             } else if (manuplation.equals("Remove") && groupMembers.contains(userNameToManipulate)) {
                 groupMembers.remove(userNameToManipulate);
                 return "User Removed From Group";
-            }
-            else return "User Exist / Removed Already";
-        }
-        else {
+            } else return "User Exist / Removed Already";
+        } else {
             return "Group Name DoesNot Exist";
         }
     }

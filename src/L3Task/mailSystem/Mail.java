@@ -58,6 +58,6 @@ public class Mail {
 
     @Override
     public String toString() {
-        return sID +"       " + from +"        "+ to +"       "+ subject +"        " + content +"       " + status ;
+        return  from + "        " + to + "       " + subject + "        " + content ;
     }
 }

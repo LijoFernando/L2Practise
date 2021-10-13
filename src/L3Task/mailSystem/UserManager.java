@@ -22,9 +22,9 @@ public class UserManager {
                 user.setPassword(password);
                 //user Profile Add
                 userProfile.put(userName, user);
-            } else     return false;
+            } else return false;
 
-        } else      return false;
+        } else return false;
         return true;
     }
 

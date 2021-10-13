@@ -12,8 +12,9 @@ public class PersistanceDB {
     private static Map<String, Group> userGroup = new HashMap<>();
     private static List<String> groupEmailAndGroupName = new ArrayList<>();
 
-    private static Map<Integer,Mail> userMails = new HashMap<>();
-    private static Map<String , Map<Integer,Mail>> mailsDB = new HashMap<>();
+    public static  Map<String, List<Mail>> userMails = new HashMap<>();
+
+    private static Map<String, Map<String, List<Mail>>> mailsDB = new HashMap<>();
 
     public static Map<String, User> getUserProfile() {
         return userProfile;
@@ -31,11 +32,10 @@ public class PersistanceDB {
         return groupEmailAndGroupName;
     }
 
-    public static Map<Integer,Mail> getUserMails(){
+    public static  Map<String, List<Mail>> getUserMails(){
         return userMails;
     }
-
-    public static  Map<String , Map<Integer,Mail>> getWholeMails(){
+    public static Map<String, Map<String, List<Mail>>> getWholeMails() {
         return mailsDB;
     }
 }
